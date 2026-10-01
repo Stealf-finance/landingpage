@@ -8,6 +8,42 @@ export const metadata: Metadata = {
   description: "How Stealf collects, uses, and protects your data.",
 };
 
+function DataTable({
+  headers,
+  rows,
+}: {
+  headers: [string, string, string];
+  rows: [string, string, string][];
+}) {
+  return (
+    <div className="overflow-x-auto border border-border rounded-lg">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-border bg-secondary/30">
+            {headers.map((header) => (
+              <th
+                key={header}
+                className="text-left px-4 py-3 font-medium text-foreground"
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="text-muted-foreground">
+          {rows.map(([first, second, third]) => (
+            <tr key={first} className="border-b border-border last:border-b-0">
+              <td className="px-4 py-3 text-foreground">{first}</td>
+              <td className="px-4 py-3">{second}</td>
+              <td className="px-4 py-3">{third}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default function PrivacyPage() {
   return (
     <main className="flex flex-col min-h-screen bg-background text-foreground">
@@ -26,420 +62,505 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Last Updated: September 2, 2026
+              Last Updated: October 1, 2026
             </p>
           </header>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              Introduction
+              1. Introduction
             </h2>
             <p className="text-muted-foreground">
-              Stealf is a privacy-first neobank on Solana operated by Stealf
-              Corporation, a company incorporated in the State of Delaware, USA.
-              This Privacy Policy explains what data we collect, how we use it,
-              who we share it with, and the rights you have over it.
+              Stealf Corporation, a Delaware corporation (&quot;Stealf&quot;,
+              &quot;we&quot;, &quot;us&quot;), runs the Stealf mobile app and
+              the website at stealf.xyz (the &quot;Service&quot;). This policy
+              explains what personal data we collect, why, who receives it, how
+              long we keep it and what you can do about it. For the purposes of
+              the EU and UK General Data Protection Regulation (GDPR), Stealf
+              Corporation is the controller of the data described here.
             </p>
             <p className="text-muted-foreground">
-              By using Stealf, you agree to the practices described below. If
-              you don&apos;t agree, please don&apos;t use the app.
+              We built Stealf around keeping your financial activity yours, so
+              we try to collect as little as we can. We&apos;d rather be precise
+              about what we do keep than make broad promises. This policy goes
+              with our{" "}
+              <Link href="/terms" className="text-foreground hover:underline">
+                Terms of Use
+              </Link>
+              ; where they mention privacy features, section 7 of the Terms
+              explains what those features hide and what stays visible.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              What We Collect
+              2. What We Collect
             </h2>
+            <DataTable
+              headers={["Category", "What it includes", "Where it comes from"]}
+              rows={[
+                [
+                  "Account",
+                  "Email address (stored encrypted, plus a one-way hash used to look up your account), pseudonym, sign-in method, Turnkey account identifier, account status, sign-up and last sign-in dates",
+                  "You, and Turnkey when you sign in",
+                ],
+                [
+                  "Wallet",
+                  "Your public Solana wallet address",
+                  "Created through Turnkey when you sign up",
+                ],
+                [
+                  "Public on-chain activity",
+                  "Public balances and transaction history of your wallet, kept in a short-lived server cache so the app updates in real time",
+                  "Read from the Solana blockchain through Helius",
+                ],
+                [
+                  "Points",
+                  "Your points balance",
+                  "Our records of your activity in the app",
+                ],
+                [
+                  "Gift-card orders",
+                  "Product, country and currency, amount, order and invoice identifiers, payment address, amount paid, any Umbra fee, order status and dates",
+                  "You, Bitrefill and the Solana blockchain",
+                ],
+                [
+                  "Diagnostics and usage",
+                  "IP address, device model, operating system, app version, crash reports and error logs, in-app usage events; all linked to your account identifier so we can fix problems on your account",
+                  "Your device, through Sentry and PostHog",
+                ],
+                ["Messages", "Anything you send us by email", "You"],
+              ]}
+            />
             <p className="text-muted-foreground">
-              Depending on which features you use, we collect:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>
-                <span className="text-foreground">Account info:</span> email
-                address and username.
-              </li>
-              <li>
-                <span className="text-foreground">Wallet addresses:</span> the
-                public address of your wallet (created via Turnkey) and, if you
-                use private features, your on-device stealth address.
-              </li>
-              <li>
-                <span className="text-foreground">On-chain transactions:</span>{" "}
-                amounts, timestamps, counterparty addresses, and signatures.
-                This data is already public on the Solana blockchain — we read
-                it via Helius to display your history.
-              </li>
-              <li>
-                <span className="text-foreground">
-                  Identity verification (KYC) data:
-                </span>{" "}
-                if you use features that convert crypto to fiat (cash-out /
-                off-ramp), you and our regulated partner collect the identity
-                information required to verify you — see &quot;Identity
-                Verification&quot; below.
-              </li>
-              <li>
-                <span className="text-foreground">Financial data:</span> for
-                cash-out, the bank account details (e.g. IBAN or account
-                number) you provide to receive fiat, and the associated payout
-                records.
-              </li>
-              <li>
-                <span className="text-foreground">Gift-card orders:</span> the
-                product, denomination, and amount when you purchase a gift card.
-                We do not store the delivered gift-card codes.
-              </li>
-              <li>
-                <span className="text-foreground">Technical data:</span> IP
-                address, device type, OS version, and app version.
-              </li>
-              <li>
-                <span className="text-foreground">
-                  Diagnostics and product analytics:
-                </span>{" "}
-                crash and error reports (via Sentry) and anonymized usage events
-                (via PostHog), used to fix bugs and improve the product. Session
-                replay is disabled.
-              </li>
-            </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">
-              Identity Verification (KYC / AML)
-            </h2>
-            <p className="text-muted-foreground">
-              Converting crypto to fiat is a regulated activity. When you use
-              our cash-out feature, identity verification is required by law
-              (anti-money-laundering and know-your-customer regulations). This
-              verification is handled through our licensed payments partner,
-              Dakota, using identity-verification providers (Sumsub and/or
-              Persona).
-            </p>
-            <p className="text-muted-foreground">
-              As part of this process you may be asked to provide your legal
-              name, date of birth, residential address, a government-issued ID,
-              and a selfie / liveness check. This information is collected and
-              processed by our KYC providers and our payments partner to verify
-              your identity and screen against sanctions lists.
-            </p>
-            <p className="text-muted-foreground">
-              Stealf does not store your government ID images or biometric
-              (selfie / liveness) data — that data is processed by the
-              specialized providers above. We retain only the verification
-              status and the records we are legally required to keep.
+              We don&apos;t collect your name, phone number, postal address,
+              government ID or bank details.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              Privacy by Design — What We Don&apos;t See
-            </h2>
-            <p className="text-muted-foreground">This is the part that matters:</p>
-            <ul className="list-disc pl-6 space-y-3 text-muted-foreground">
-              <li>
-                We never see or store the private key of your stealth wallet.
-                It&apos;s generated on your device and stored in the secure
-                enclave (iOS Keychain / Android Keystore). It never leaves the
-                device.
-              </li>
-              <li>
-                We never see your private (encrypted) balance in plaintext. Your
-                private balance is encrypted through Umbra&apos;s confidential
-                protocol (which runs on the Arcium MPC network). Even our
-                backend cannot decrypt it.
-              </li>
-              <li>
-                We never receive the private key of your Turnkey-secured wallet.
-                It is held inside Turnkey&apos;s secure key-management
-                infrastructure; only you can authorize it through your login.
-              </li>
-              <li>
-                We do not sell your personal data, and we do not share it for
-                advertising.
-              </li>
-            </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">
-              How We Use Your Information
+              3. What We Don&apos;t Collect, and What We Can&apos;t See
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                <span className="text-foreground">Provide the service:</span>{" "}
-                authenticate sign-ins, display balances and transaction history,
-                process swaps, yield, gift-card purchases, and cash-outs.
+                <span className="text-foreground">Private keys.</span> Your
+                wallet&apos;s private key is generated and held inside
+                Turnkey&apos;s secure hardware environments. We never receive
+                it, and we can&apos;t use it to sign anything.
               </li>
               <li>
-                <span className="text-foreground">Verify identity:</span> meet
-                our know-your-customer and anti-money-laundering obligations for
-                regulated features.
+                <span className="text-foreground">Your private balance.</span>{" "}
+                Amounts in your private balance are encrypted by the Umbra
+                protocol. Our servers never store or cache them.
               </li>
               <li>
-                <span className="text-foreground">Communicate:</span> send
-                one-time passcodes for email authentication, account and
-                transaction notifications, and (only if you opt in) product
-                updates.
+                <span className="text-foreground">Biometrics.</span> Face ID,
+                Touch ID or fingerprint unlock runs entirely on your phone. We
+                only learn whether it succeeded.
               </li>
               <li>
-                <span className="text-foreground">Security:</span> detect abuse,
-                rate-limit suspicious activity, and debug errors.
+                <span className="text-foreground">Gift-card codes.</span>{" "}
+                Bitrefill delivers the code to you; we don&apos;t keep it.
               </li>
               <li>
-                <span className="text-foreground">Legal compliance:</span>{" "}
-                comply with applicable law and respond to lawful requests when
-                required.
+                <span className="text-foreground">Identity documents.</span> We
+                don&apos;t run identity checks today, so we hold no ID scans,
+                selfies or similar data.
               </li>
             </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">
-              Authentication &amp; Biometrics
-            </h2>
             <p className="text-muted-foreground">
-              Stealf authenticates access to your wallet via Turnkey using OAuth
-              (Google, Apple) or one-time passcodes sent to your email. Any
-              device biometric authentication (Face ID, Touch ID, fingerprint)
-              is handled locally by iOS or Android — we never receive, store, or
-              transmit your facial images, fingerprints, or any device biometric
-              templates. We only receive the result of the local authentication
-              (success or failure).
-            </p>
-            <p className="text-muted-foreground">
-              The selfie / liveness check used for identity verification (KYC)
-              is separate and is processed by our KYC providers, not stored by
-              Stealf (see &quot;Identity Verification&quot; above). One-time
-              passcodes sent to your email expire after a short period and are
-              invalidated after use.
+              One thing we do keep, and you should know about: when you pay for
+              a gift card from your private balance, our order record shows the
+              amount, the time and the Bitrefill payment address, tied to your
+              account. The payment stays private on-chain, but our database
+              knows it was you. We keep these records to track orders and
+              recover failed ones.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              Third-Party Services
+              4. How We Use Your Data, and on What Legal Basis
+            </h2>
+            <DataTable
+              headers={["Purpose", "Data used", "Legal basis (GDPR)"]}
+              rows={[
+                [
+                  "Create your account and sign you in",
+                  "Account, wallet",
+                  "Performance of our contract with you",
+                ],
+                [
+                  "Show your balances and history in real time",
+                  "Wallet, public on-chain activity",
+                  "Performance of our contract with you",
+                ],
+                [
+                  "Process and recover gift-card orders",
+                  "Gift-card orders, account",
+                  "Performance of our contract with you",
+                ],
+                [
+                  "Run points programs and check eligibility for any future rewards",
+                  "Points, wallet, account",
+                  "Performance of our contract with you (the program's rules)",
+                ],
+                [
+                  "Find and fix bugs, keep the Service secure, prevent abuse",
+                  "Diagnostics and usage, account",
+                  "Our legitimate interest in a working, secure app",
+                ],
+                [
+                  "Understand how features are used so we can improve them",
+                  "Diagnostics and usage",
+                  "Your consent where the law requires it (including in the EU); otherwise our legitimate interest",
+                ],
+                [
+                  "Send sign-in codes and important service notices",
+                  "Email",
+                  "Performance of our contract with you",
+                ],
+                [
+                  "Send product news",
+                  "Email",
+                  "Your consent; you can opt out at any time",
+                ],
+                [
+                  "Meet legal obligations and answer lawful requests",
+                  "Any of the above, only as needed",
+                  "Legal obligation",
+                ],
+              ]}
+            />
+            <p className="text-muted-foreground">
+              We don&apos;t sell your data, share it for advertising or use it
+              to build advertising profiles. We don&apos;t make automated
+              decisions about you that have legal or similar effects. Using the
+              Service isn&apos;t the same as consenting to everything here;
+              where we rely on consent, we&apos;ll ask for it separately.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              5. Who Receives Your Data
             </h2>
             <p className="text-muted-foreground">
-              We rely on the following service providers. Each has its own
-              privacy policy:
+              Service providers that work for us only process data on our
+              instructions:
             </p>
+            <DataTable
+              headers={["Provider", "What they do for us", "What they receive"]}
+              rows={[
+                [
+                  "Turnkey",
+                  "Wallet keys and sign-in (OAuth, email codes)",
+                  "Email, sign-in details, wallet address",
+                ],
+                [
+                  "MongoDB Atlas",
+                  "Database",
+                  "Account data, points, gift-card orders",
+                ],
+                [
+                  "Railway",
+                  "Hosting our backend",
+                  "Everything our backend processes, including the real-time cache",
+                ],
+                [
+                  "Helius",
+                  "Solana data access",
+                  "Wallet addresses (public on-chain)",
+                ],
+                [
+                  "Resend",
+                  "Sending sign-in and service emails",
+                  "Email address",
+                ],
+                [
+                  "Sentry",
+                  "Error and crash monitoring",
+                  "Diagnostics linked to your account identifier",
+                ],
+                [
+                  "PostHog",
+                  "Product analytics",
+                  "Usage events linked to your account identifier",
+                ],
+              ]}
+            />
+            <p className="text-muted-foreground">
+              When you use a feature, the third party behind it also receives
+              what it needs to run it, under its own privacy policy:
+            </p>
+            <DataTable
+              headers={["Third party", "Feature", "What they receive"]}
+              rows={[
+                [
+                  "Umbra and Arcium",
+                  "Private balance and transfers",
+                  "Wallet address and transaction data; amounts in encrypted form",
+                ],
+                [
+                  "Jupiter",
+                  "Swaps and xStocks",
+                  "Wallet address and swap details",
+                ],
+                [
+                  "Jito",
+                  "Liquid staking",
+                  "Wallet address and staking transactions",
+                ],
+                [
+                  "Backed Assets",
+                  "xStocks issuer",
+                  "On-chain transactions involving xStocks",
+                ],
+                [
+                  "Bitrefill",
+                  "Gift cards",
+                  "Product, amount and payment details; not your email",
+                ],
+                ["CoinGecko", "Price data", "No personal data"],
+              ]}
+            />
+            <p className="text-muted-foreground">
+              If the app calls one of these services directly from your phone,
+              that service may also see your IP address. We may also disclose
+              data where the law requires it, to protect people&apos;s safety or
+              our rights, or to a buyer if Stealf is acquired; the buyer would
+              then be bound by this policy.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              6. Blockchain Data and Umbra
+            </h2>
+            <p className="text-muted-foreground">
+              Everything on your public balance is recorded on Solana, where
+              anyone can read it and nobody, including us, can change or delete
+              it. Your rights under section 9 apply to the data we hold, not to
+              the blockchain.
+            </p>
+            <p className="text-muted-foreground">
+              Private features run on the Umbra protocol, operated by Phoenix
+              DAO LLC, which handles data under its own{" "}
+              <a
+                href="https://app.umbraprivacy.com/legal/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline"
+              >
+                Privacy Policy
+              </a>
+              . Umbra&apos;s SDK, which we use, doesn&apos;t send personal data
+              or telemetry to Phoenix DAO by default, and Umbra doesn&apos;t ask
+              for your identity.
+            </p>
+            <p className="text-muted-foreground">
+              Privacy features reduce what others can see on-chain; they
+              don&apos;t make you anonymous. Timing, amounts and other metadata
+              can still link activity together, and authorities can legally
+              require you to disclose viewing keys. Section 7 of our{" "}
+              <Link href="/terms" className="text-foreground hover:underline">
+                Terms of Use
+              </Link>{" "}
+              explains what stays visible.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              7. International Transfers
+            </h2>
+            <p className="text-muted-foreground">
+              Stealf is a US company, and most of our providers store data in
+              the United States. If you use Stealf from the European Economic
+              Area, the UK or Switzerland, your data is transferred there. We
+              rely on the EU-US Data Privacy Framework where a provider is
+              certified under it, and on the European Commission&apos;s Standard
+              Contractual Clauses otherwise. You can ask us for a copy of the
+              safeguards that apply.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              8. How Long We Keep Data
+            </h2>
             <div className="overflow-x-auto border border-border rounded-lg">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border bg-secondary/30">
                     <th className="text-left px-4 py-3 font-medium text-foreground">
-                      Provider
+                      Data
                     </th>
                     <th className="text-left px-4 py-3 font-medium text-foreground">
-                      Purpose
-                    </th>
-                    <th className="text-left px-4 py-3 font-medium text-foreground">
-                      Data shared
+                      How long
                     </th>
                   </tr>
                 </thead>
                 <tbody className="text-muted-foreground">
                   {[
                     [
-                      "Turnkey",
-                      "Wallet key management, OAuth authentication",
-                      "Email, wallet address",
+                      "Account, wallet address, points",
+                      "While your account is open, then deleted within 90 days of closing it",
                     ],
                     [
-                      "Dakota",
-                      "Crypto-to-fiat cash-out, identity verification (KYC/AML)",
-                      "Name, date of birth, address, government ID, bank details, transactions",
+                      "Gift-card orders",
+                      "While your account is open, then deleted within 90 days of closing it",
                     ],
                     [
-                      "Sumsub / Persona",
-                      "Identity verification on behalf of Dakota",
-                      "Government ID, selfie / liveness, personal details",
+                      "Real-time balance and history cache",
+                      "Refreshed continuously; not kept as a lasting record",
                     ],
+                    ["Crash reports and error logs (Sentry)", "30 days"],
+                    ["Usage events (PostHog)", "12 months"],
                     [
-                      "Bitrefill",
-                      "Gift-card fulfillment",
-                      "Order and amount details",
+                      "Emails you send us",
+                      "As long as needed to handle your request, then up to 2 years",
                     ],
-                    [
-                      "Reflect",
-                      "USDC+ yield (STLF)",
-                      "Wallet address, on-chain transactions",
-                    ],
-                    [
-                      "Umbra",
-                      "Confidential balance and private transfers",
-                      "Encrypted data only",
-                    ],
-                    [
-                      "Jupiter",
-                      "Token swap routing",
-                      "Wallet address, transaction parameters",
-                    ],
-                    [
-                      "xStocks (Backed)",
-                      "Tokenized stocks",
-                      "Wallet address, on-chain transactions",
-                    ],
-                    [
-                      "Helius",
-                      "Solana RPC and transaction data",
-                      "Wallet addresses (already public on-chain)",
-                    ],
-                    ["Resend", "Sending authentication emails", "Email address"],
-                    [
-                      "Sentry",
-                      "Error monitoring",
-                      "Crash logs, anonymized context",
-                    ],
-                    [
-                      "PostHog",
-                      "Product analytics",
-                      "Anonymized usage events (no keys or balances)",
-                    ],
-                    [
-                      "MongoDB Atlas / Railway",
-                      "Database and application hosting",
-                      "Account data (email encrypted at rest)",
-                    ],
-                    ["CoinGecko", "SOL/USD price feed", "No personal data"],
-                  ].map(([provider, purpose, data]) => (
+                  ].map(([data, duration]) => (
                     <tr
-                      key={provider}
+                      key={data}
                       className="border-b border-border last:border-b-0"
                     >
-                      <td className="px-4 py-3 text-foreground">{provider}</td>
-                      <td className="px-4 py-3">{purpose}</td>
-                      <td className="px-4 py-3">{data}</td>
+                      <td className="px-4 py-3 text-foreground">{data}</td>
+                      <td className="px-4 py-3">{duration}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <p className="text-muted-foreground">
-              Some of these providers are located outside the EU (mainly in the
-              United States). When you use Stealf from the European Union, your
-              data may be transferred to the US. We rely on Standard Contractual
-              Clauses where applicable.
+              We may keep some data longer where the law requires it or to
+              settle a dispute. On-chain data stays on Solana permanently.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">Your Rights</h2>
+            <h2 className="text-2xl font-medium tracking-tight">
+              9. Your Rights
+            </h2>
             <p className="text-muted-foreground">
-              If you&apos;re in the European Economic Area, UK, or Switzerland
-              (GDPR), you have the right to:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>access the personal data we hold about you</li>
-              <li>correct inaccurate data</li>
-              <li>request deletion of your data</li>
-              <li>restrict or object to processing</li>
-              <li>request portability of your data</li>
-              <li>withdraw consent at any time</li>
-              <li>
-                lodge a complaint with your local supervisory authority (in
-                France: the CNIL)
-              </li>
-            </ul>
-            <p className="text-muted-foreground">
-              If you&apos;re a California resident (CCPA/CPRA), you have the
-              right to:
+              If you&apos;re in the EEA, the UK or Switzerland, you can ask us
+              to:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                know what personal information we collect and how we use it
+                give you a copy of your data, or send it to you in a portable
+                format;
               </li>
-              <li>request deletion of your personal information</li>
+              <li>correct it if it&apos;s wrong;</li>
+              <li>delete it;</li>
               <li>
-                opt out of the sale of personal information (we do not sell
-                personal information)
+                stop or limit certain processing, including anything based on
+                our legitimate interests;
               </li>
-              <li>non-discrimination for exercising your rights</li>
+              <li>
+                withdraw a consent you gave, without affecting what we did
+                before.
+              </li>
             </ul>
             <p className="text-muted-foreground">
-              Some rights are limited where we are legally required to keep
-              certain records (for example, identity-verification and
-              transaction records under anti-money-laundering law). To exercise
-              any of these rights, email us at{" "}
+              You can also complain to your local data protection authority; in
+              France, that&apos;s the CNIL (
+              <a
+                href="https://www.cnil.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline"
+              >
+                cnil.fr
+              </a>
+              ).
+            </p>
+            <p className="text-muted-foreground">
+              If you&apos;re a California resident, you can ask what personal
+              information we collect and how we use it, and ask us to delete it.
+              We don&apos;t sell or share personal information for
+              cross-context advertising, and we won&apos;t treat you differently
+              for using these rights.
+            </p>
+            <p className="text-muted-foreground">
+              To use any of these rights, email{" "}
               <a
                 href="mailto:louis@stealf.xyz"
                 className="text-foreground hover:underline"
               >
                 louis@stealf.xyz
               </a>{" "}
-              from the email address linked to your account. We&apos;ll respond
-              within 30 days.
+              from the address linked to your account, so we can confirm
+              it&apos;s you. We&apos;ll reply within one month. Deleting your
+              account deletes the data we hold, but it can&apos;t touch your
+              wallet or anything on-chain; your funds stay yours, reachable with
+              your keys.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              Data Retention
+              10. Security
             </h2>
             <p className="text-muted-foreground">
-              We keep your account data for as long as your account is active.
-              If you delete your account, we delete your personal data within 90
-              days, except where we are legally required to retain it.
-            </p>
-            <p className="text-muted-foreground">
-              In particular, identity-verification (KYC) data and
-              cash-out/transaction records tied to regulated features are
-              retained for the period required by applicable
-              anti-money-laundering and financial regulations (typically up to
-              five years after the end of our relationship), even after account
-              deletion.
-            </p>
-            <p className="text-muted-foreground">
-              On-chain transactions cannot be deleted — they are permanent
-              records on the Solana blockchain, which we don&apos;t control.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">Children</h2>
-            <p className="text-muted-foreground">
-              Stealf is not intended for anyone under 18. We do not knowingly
-              collect data from minors. If you believe a minor has provided us
-              data, contact us and we&apos;ll delete it.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">Security</h2>
-            <p className="text-muted-foreground">
-              We use industry-standard measures to protect your data: encryption
-              in transit (HTTPS/WSS), encryption at rest, restricted access,
-              rate limiting, and monitoring. No system is 100% secure, and you
-              are responsible for keeping your device, login, and recovery
-              phrase safe.
+              We encrypt data in transit (HTTPS and secure WebSockets) and at
+              rest, encrypt your email in our database, limit who on our team
+              can access production data, rate-limit our APIs and monitor for
+              abuse. No system is fully secure, though. If a breach puts your
+              data at risk, we&apos;ll tell you and the relevant authorities as
+              the law requires. Keeping your phone and your Turnkey login safe
+              is up to you.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              Changes to This Policy
+              11. Children
             </h2>
             <p className="text-muted-foreground">
-              If we update this policy, we&apos;ll post the new version here and
-              update the &quot;Last Updated&quot; date. For material changes,
-              we&apos;ll notify you by email.
+              Stealf is for people aged 18 and over. We don&apos;t knowingly
+              collect data from anyone younger; if you think a minor has an
+              account, tell us and we&apos;ll delete it.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">Contact</h2>
+            <h2 className="text-2xl font-medium tracking-tight">
+              12. Changes to This Policy
+            </h2>
+            <p className="text-muted-foreground">
+              When we change this policy, we&apos;ll post the new version here
+              with a new &quot;Last Updated&quot; date. For material changes,
+              such as collecting a new kind of data or using it for a new
+              purpose, we&apos;ll tell you in the app or by email before the
+              change takes effect.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">13. Contact</h2>
             <address className="not-italic text-muted-foreground space-y-1">
               <div className="text-foreground">Stealf Corporation</div>
               <div>1111b South Governors Avenue, STE 40928</div>
               <div>Dover, DE 19904, United States</div>
               <div>
-                Email:{" "}
+                Privacy questions and requests:{" "}
                 <a
                   href="mailto:louis@stealf.xyz"
                   className="text-foreground hover:underline"
                 >
                   louis@stealf.xyz
+                </a>
+              </div>
+              <div>
+                Security reports:{" "}
+                <a
+                  href="mailto:thomas@stealf.xyz"
+                  className="text-foreground hover:underline"
+                >
+                  thomas@stealf.xyz
                 </a>
               </div>
             </address>
