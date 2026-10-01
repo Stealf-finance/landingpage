@@ -26,7 +26,7 @@ export default function TermsPage() {
               Terms of Use
             </h1>
             <p className="text-sm text-muted-foreground">
-              Last Updated: September 2, 2026
+              Last Updated: October 1, 2026
             </p>
           </header>
 
@@ -35,35 +35,60 @@ export default function TermsPage() {
               1. Introduction
             </h2>
             <p className="text-muted-foreground">
-              Stealf is a privacy-first neobank on Solana operated by Stealf
-              Corporation, a company incorporated in the State of Delaware, USA
-              (&quot;Stealf&quot;, &quot;we&quot;, &quot;our&quot;, or
+              Stealf is a self-custodial, privacy-focused financial app on
+              Solana, operated by Stealf Corporation, a Delaware corporation
+              (&quot;Stealf&quot;, &quot;we&quot;, &quot;our&quot;,
               &quot;us&quot;). These Terms of Use (&quot;Terms&quot;) are a
-              legally binding agreement between you and us.
+              binding agreement between you and us, and they cover the Stealf
+              mobile app, the website at stealf.xyz and any related services
+              (together, the &quot;Service&quot;).
             </p>
             <p className="text-muted-foreground">
-              By accessing or using Stealf in any way, you agree to these Terms.
-              If you don&apos;t agree, don&apos;t use the service.
+              By downloading, accessing or using the Service, you agree to these
+              Terms and to our{" "}
+              <Link
+                href="/privacy"
+                className="text-foreground hover:underline"
+              >
+                Privacy Policy
+              </Link>
+              . If you don&apos;t agree, don&apos;t use the Service.
+            </p>
+            <p className="text-muted-foreground">
+              <span className="text-foreground">What we store.</span> To run the
+              Service, we keep a small set of data: your email address
+              (encrypted, used to sign you in and contact you), a pseudonym,
+              your Turnkey account identifier, your public wallet address, your
+              points balance, and records of your gift-card orders (product,
+              amount, status and payment details) so we can track them and
+              recover a failed order. Our servers also keep a temporary cache of
+              your public balance and transaction history so the app can update
+              in real time. We never hold your private keys, and our servers
+              never store or cache your private balance. Retention periods and
+              the providers we use are set out in our Privacy Policy.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              2. Regulatory Status — Stealf Is Not a Bank
+              2. What Stealf Is, and What It Isn&apos;t
             </h2>
             <p className="text-muted-foreground">
-              Stealf is a technology company that provides software. Stealf is
-              not a bank, a licensed money transmitter, or a regulated financial
-              institution, and does not itself hold or move customer fiat funds.
+              Stealf is a software company. We build an interface that lets you
+              use your own wallet with third-party protocols on Solana. We are
+              not a bank, a money transmitter, a broker, an investment adviser
+              or a regulated financial institution, and we never hold, pool or
+              move your funds for you. Nothing in the Service is a bank deposit,
+              and none of it is covered by deposit insurance.
             </p>
             <p className="text-muted-foreground">
-              Regulated activities — such as crypto-to-fiat conversion and
-              payouts to your bank — are performed by licensed third-party
-              partners (for example, Dakota) on their own infrastructure and
-              under their own terms. Your crypto assets remain self-custodied
-              until you choose to send them to a partner to execute a
-              transaction you initiate. Balances in Stealf are not bank deposits
-              and are not covered by any deposit-insurance scheme.
+              The Service is in early access. Features are still changing, some
+              are rolled out progressively, and the app may behave in ways we
+              didn&apos;t expect. The Stealf app itself has not yet been audited
+              by an independent security firm. The protocols we connect to have
+              been audited by independent firms, and their providers publish
+              those reports. Those audits cover the providers&apos; code, not
+              ours, and no audit rules out every bug.
             </p>
           </section>
 
@@ -71,33 +96,38 @@ export default function TermsPage() {
             <h2 className="text-2xl font-medium tracking-tight">
               3. Eligibility
             </h2>
-            <p className="text-muted-foreground">By using Stealf, you represent that:</p>
+            <p className="text-muted-foreground">
+              By using the Service, you confirm that:
+            </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                You are at least 18 years old and have legal capacity to enter
-                into this agreement.
+                you&apos;re at least 18 and legally able to enter into these
+                Terms;
               </li>
               <li>
-                You are not located in, or a resident or citizen of, any
-                jurisdiction subject to comprehensive sanctions (including Cuba,
-                Iran, North Korea, Syria, and the Crimea, Donetsk, and Luhansk
-                regions).
+                you aren&apos;t located in, or a resident of, a country or
+                region under comprehensive sanctions (currently including Cuba,
+                Iran, North Korea and the Crimea, so-called Donetsk People&apos;s
+                Republic and Luhansk People&apos;s Republic regions of Ukraine),
+                and you aren&apos;t on a sanctions list kept by the United
+                States, the European Union, the United Kingdom or the United
+                Nations;
               </li>
               <li>
-                You are not on any sanctions list maintained by the United
-                States, the European Union, the United Kingdom, or the United
-                Nations.
+                using the Service, including privacy-enhancing features, is
+                legal where you live and where you are;
               </li>
               <li>
-                Your use of Stealf does not violate any law or regulation
-                applicable to you.
+                you understand how self-custodial wallets work, including that
+                blockchain transactions can&apos;t be reversed.
               </li>
             </ul>
             <p className="text-muted-foreground">
-              Some features (such as cash-out) require successful identity
-              verification. We may decline, restrict, suspend, or terminate your
-              access at our discretion, including for compliance, fraud
-              prevention, security, or regulatory reasons.
+              Some features carry extra geographic limits, described in their
+              own sections. We may block, limit or end access to any feature
+              where we believe the law requires it, including based on your IP
+              address, device signals or other location indicators. Don&apos;t
+              use a VPN or similar tool to get around these limits.
             </p>
           </section>
 
@@ -106,252 +136,388 @@ export default function TermsPage() {
               4. What Stealf Provides
             </h2>
             <p className="text-muted-foreground">
-              Stealf provides a mobile interface to:
+              The Service is an interface to the following, each run by a third
+              party:
+            </p>
+            <div className="overflow-x-auto border border-border rounded-lg">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/30">
+                    <th className="text-left px-4 py-3 font-medium text-foreground">
+                      Feature
+                    </th>
+                    <th className="text-left px-4 py-3 font-medium text-foreground">
+                      Provided by
+                    </th>
+                    <th className="text-left px-4 py-3 font-medium text-foreground">
+                      Section
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  {[
+                    [
+                      "Self-custodial Solana wallet, with a public balance and, once registered with Umbra, a private balance",
+                      "Turnkey (key infrastructure)",
+                      "6",
+                    ],
+                    [
+                      "Private transfers and shielded balances",
+                      "Umbra protocol, built on Arcium",
+                      "7",
+                    ],
+                    [
+                      "Token swaps",
+                      "Jupiter and the liquidity sources it routes to",
+                      "8",
+                    ],
+                    [
+                      "Tokenized stocks (xStocks)",
+                      "Backed Assets, accessed through Jupiter swaps",
+                      "8",
+                    ],
+                    ["Liquid staking (JitoSOL)", "Jito stake pool", "9"],
+                    ["Gift cards", "Bitrefill and the issuing merchants", "10"],
+                  ].map(([feature, provider, section]) => (
+                    <tr
+                      key={feature}
+                      className="border-b border-border last:border-b-0"
+                    >
+                      <td className="px-4 py-3 text-foreground">{feature}</td>
+                      <td className="px-4 py-3">{provider}</td>
+                      <td className="px-4 py-3">{section}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-muted-foreground">
+              We may add, change or remove features and providers at any time.
+              Cash-out to a bank account, payment cards and identity
+              verification aren&apos;t part of the Service today; if we add
+              them, we&apos;ll update these Terms first.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">5. Fees</h2>
+            <p className="text-muted-foreground">
+              Stealf charges no fees and takes no commission. We don&apos;t add
+              a margin to swaps, staking, private transfers, xStocks or gift
+              cards, we don&apos;t take a referral cut from the providers we
+              route to, and there&apos;s no subscription.
+            </p>
+            <p className="text-muted-foreground">
+              Other parties still charge for what they run, and those costs show
+              up in the quote or rate you see before you confirm:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>Solana network and priority fees;</li>
+              <li>
+                fees and price impact from the liquidity pools Jupiter routes
+                through;
+              </li>
+              <li>
+                Umbra protocol fees on shielded deposits, private transfers and
+                withdrawals, and relayer fees;
+              </li>
+              <li>
+                fees the Jito stake pool takes from staking rewards or on
+                withdrawal;
+              </li>
+              <li>Bitrefill&apos;s pricing on gift cards.</li>
+            </ul>
+            <p className="text-muted-foreground">
+              If we ever start charging, we&apos;ll tell you in the app at least
+              30 days beforehand and show the fee before every transaction it
+              applies to. A fee will never apply to a transaction you confirmed
+              before the change.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              6. Self-Custody and Your Keys
+            </h2>
+            <p className="text-muted-foreground">
+              You hold your assets; we don&apos;t. The app creates one Solana
+              wallet for you, and its private key is never in our hands.
+            </p>
+            <p className="text-muted-foreground">
+              Your wallet runs on Turnkey&apos;s key infrastructure. Its private
+              key is generated and kept inside Turnkey&apos;s secure hardware
+              environments, and you sign in through OAuth or email. Stealf
+              can&apos;t see that key, export it or sign transactions with it.
+            </p>
+            <p className="text-muted-foreground">
+              <span className="text-foreground">Two balances, one wallet.</span>{" "}
+              Your public balance sits in standard Solana token accounts that
+              anyone can see on a block explorer. When you register your wallet
+              with Umbra, you also get a private balance whose amounts are
+              encrypted inside the Umbra protocol (see section 7). The keys
+              Umbra needs are derived from a signature by your wallet, so the
+              same Turnkey wallet controls both balances.
+            </p>
+            <p className="text-muted-foreground">
+              That also means a single point of failure: if you lose access to
+              your login and Turnkey recovery methods, you lose access to both
+              balances, and nobody, including us, can restore it.
+            </p>
+            <p className="text-muted-foreground">
+              You&apos;re responsible for keeping your phone, login and recovery
+              methods safe, for checking every transaction before you sign it,
+              and for understanding what each operation does. Transactions on
+              Solana are final once confirmed.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              7. Private Transfers (Umbra)
+            </h2>
+            <p className="text-muted-foreground">
+              Private balances and private transfers run on the Umbra protocol,
+              operated by Phoenix DAO LLC (Republic of the Marshall Islands),
+              which relies on Arcium&apos;s encrypted computation network. When
+              you first turn these features on, you also accept Umbra&apos;s{" "}
+              <a
+                href="https://app.umbraprivacy.com/legal/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline"
+              >
+                Terms and Conditions
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://app.umbraprivacy.com/legal/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline"
+              >
+                Privacy Policy
+              </a>
+              . Where they conflict with
+              these Terms on how the protocol itself works, Umbra&apos;s terms
+              control.
+            </p>
+            <p className="text-muted-foreground">
+              Read those documents; the points below matter most.
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                A <span className="text-foreground">self-custodied Solana wallet</span>{" "}
-                with a public balance and a private, encrypted balance, secured
-                through Turnkey key-management infrastructure and, for private
-                features, an on-device key.
-              </li>
-              <li>Token swaps routed through Jupiter.</li>
-              <li>
-                <span className="text-foreground">Yield</span>, via the Reflect
-                protocol (a yield-bearing USDC-based asset, STLF).
+                <span className="text-foreground">
+                  Privacy isn&apos;t guaranteed.
+                </span>{" "}
+                It reduces what others can see on-chain, but timing, amounts,
+                metadata and future advances in cryptography can all weaken it.
               </li>
               <li>
-                <span className="text-foreground">Tokenized stocks</span>{" "}
-                (xStocks) issued by a third-party issuer.
+                <span className="text-foreground">What stays visible.</span>{" "}
+                Your public balance and its history are public. Your private
+                balance is attached to your wallet: others can see that your
+                wallet uses Umbra and when you move funds in or out, even though
+                the amounts held privately are encrypted. Private transfers
+                through Umbra&apos;s pool are what break the link between
+                sender and recipient. Moving an exact amount out of your private
+                balance right before you spend it makes it easier to connect the
+                two.
               </li>
               <li>
-                <span className="text-foreground">Gift cards</span> purchased
-                with stablecoins and fulfilled by Bitrefill.
+                <span className="text-foreground">
+                  Screening and relayers.
+                </span>{" "}
+                Umbra may screen deposits for sanctions or risk and refuse some.
+                Withdrawals depend on independent relayers, so an outage can
+                delay or block a transfer for a while.
               </li>
               <li>
-                <span className="text-foreground">Crypto-to-fiat cash-out</span>{" "}
-                (off-ramp) executed by a licensed payments partner (Dakota),
-                which requires identity verification.
+                <span className="text-foreground">Disclosure.</span> Viewing
+                keys let you share your history with an auditor or accountant.
+                Keep them safe; authorities may legally require you to hand them
+                over.
               </li>
               <li>
-                <span className="text-foreground">Private transfers</span> that
-                rely on Umbra&apos;s confidential protocol.
+                <span className="text-foreground">Legality.</span> Don&apos;t
+                use private features where privacy-enhancing technology is
+                restricted.
               </li>
             </ul>
             <p className="text-muted-foreground">
-              Features may be added, changed, or removed over time. Some
-              features are rolled out progressively and may not be available in
-              all regions.
+              Stealf doesn&apos;t operate Umbra or Arcium and isn&apos;t
+              responsible for how either works, fails or changes.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              5. Self-Custody and Your Responsibility for Keys
+              8. Swaps and Tokenized Stocks
             </h2>
             <p className="text-muted-foreground">
-              Stealf is non-custodial. You control your wallet and your assets
-              at all times.
+              Swaps go through Jupiter, which picks a route across decentralized
+              exchanges. We don&apos;t set prices or choose routes, and we
+              can&apos;t guarantee execution. The price can move between the
+              quote and the moment your transaction lands, because of slippage,
+              liquidity or network load. A confirmed swap is final.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-foreground">For your on-device key:</span>{" "}
-              the private key used for private features is generated on your
-              device and stored locally in the secure enclave (iOS Keychain /
-              Android Keystore). We do not store, back up, or have any access to
-              this key. If you lose your device and your recovery phrase (the
-              BIP39 mnemonic), your funds are permanently lost. We cannot
-              recover them.
+              xStocks are tokens issued by Backed Assets that track the price of
+              listed shares. In the app you get them through a Jupiter swap,
+              like any other token. They aren&apos;t shares: you get no voting
+              rights, no dividends paid as a shareholder and no claim on the
+              underlying company, which hasn&apos;t issued, endorsed or approved
+              them. Their price can drift from the share price, liquidity can be
+              thin, and you carry the issuer&apos;s and its custodian&apos;s
+              risk. Backed&apos;s own legal documents apply when you hold them.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-foreground">
-                For your Turnkey-secured wallet:
-              </span>{" "}
-              access is authenticated via OAuth or email through Turnkey. Stealf
-              never sees the private key. If you lose access to your login and
-              recovery methods, you may lose access to this wallet.
-            </p>
-            <p className="text-muted-foreground">You are solely responsible for:</p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Keeping your device secure.</li>
-              <li>
-                Keeping your recovery phrase, login, and any other credentials
-                safe and confidential.
-              </li>
-              <li>Verifying transaction details before signing.</li>
-              <li>Understanding the risks of any operation you initiate.</li>
-            </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">
-              6. Identity Verification (KYC / AML)
-            </h2>
-            <p className="text-muted-foreground">
-              Features that convert crypto to fiat require you to verify your
-              identity, as required by anti-money-laundering law. Verification
-              is performed by our payments partner and its identity-verification
-              providers. You agree to provide accurate, current, and complete
-              information, and you authorize us and our partners to verify it and
-              screen it against sanctions and watchlists. We may refuse or revoke
-              access to regulated features if verification fails or if we detect
-              fraud, sanctions, or compliance risk.
+              xStocks aren&apos;t available to US persons or to anyone in the
+              United States, and they&apos;re also restricted in Canada, the
+              United Kingdom and Australia, among other places the issuer may
+              add. By swapping into xStocks you confirm you&apos;re not in, or a
+              resident of, any of these places. We may hide or block xStocks
+              based on your location signals.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              7. Cash-Out (Off-Ramp)
+              9. Liquid Staking (JitoSOL)
             </h2>
             <p className="text-muted-foreground">
-              The cash-out feature lets you convert on-chain stablecoins to fiat
-              paid to your bank account. This conversion and payout are executed
-              by a licensed third-party partner (Dakota), not by Stealf. You are
-              responsible for providing correct bank details; Stealf and its
-              partner are not liable for funds sent to an incorrect account you
-              provided. Fees, limits, supported currencies, payout times, and
-              availability depend on the partner and your jurisdiction, and
-              amounts received may differ from a displayed estimate due to
-              network fees and exchange rates. Once you send crypto to the
-              deposit address for a cash-out, the transaction may be
-              irreversible.
+              You can turn SOL into JitoSOL, a token from the Jito stake pool
+              that represents staked SOL and grows in value as staking and MEV
+              rewards come in. You get JitoSOL by depositing into the Jito stake
+              pool. Stealf doesn&apos;t run the pool, pick its
+              validators or hold your JitoSOL.
             </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">8. Gift Cards</h2>
-            <p className="text-muted-foreground">
-              Gift cards are digital vouchers fulfilled by Bitrefill and issued
-              by the respective merchants. Availability, value, and terms depend
-              on the merchant and your country. Gift-card purchases are final and
-              non-refundable once delivered. Stealf does not control, and is not
-              responsible for, the acceptance, expiry, or terms of any gift card,
-              which are governed by the issuing merchant&apos;s and
-              Bitrefill&apos;s terms.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">9. Yield</h2>
-            <p className="text-muted-foreground">
-              Stealf Yield lets you hold a yield-bearing USDC-based asset (STLF)
-              through the Reflect protocol. Stealf does not custody or pool these
-              funds with other users&apos; funds. By using it you understand and
-              accept that:
-            </p>
+            <p className="text-muted-foreground">Before you stake, know that:</p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>
-                Yields are variable, depend on the underlying protocol, and may
-                change or fall to zero at any time.
+                rewards vary with network conditions and validator performance,
+                and can drop;
               </li>
               <li>
-                The underlying protocol, or any integrated protocol, may
-                experience smart-contract failures, exploits, depegs, or
-                insolvency.
+                the pool&apos;s smart contracts or the validators it delegates
+                to can fail or be exploited;
               </li>
               <li>
-                Solana network conditions may affect the timing or outcome of
-                any deposit or withdrawal.
-              </li>
-              <li>Past performance does not predict future results.</li>
-              <li>
-                Stealf does not guarantee the return of principal or any specific
-                yield.
+                getting back to SOL may take until the end of the current Solana
+                epoch (often around two days), or cost you a discount if you
+                swap out on the market instead;
               </li>
               <li>
-                Stealf is not a lender, broker, asset manager, or financial
-                advisor.
+                JitoSOL can trade below its underlying value, especially when
+                markets are stressed;
+              </li>
+              <li>
+                the Jito pool takes its own fees, as set out in Jito&apos;s
+                documentation.
               </li>
             </ul>
+            <p className="text-muted-foreground">
+              We don&apos;t promise any return, and we don&apos;t promise
+              you&apos;ll get back the SOL you put in.
+            </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              10. Token Swaps and Tokenized Stocks
+              10. Gift Cards
             </h2>
             <p className="text-muted-foreground">
-              Token swaps are routed through Jupiter and other decentralized
-              exchanges and aggregators. Stealf does not set prices, control
-              routing, or guarantee execution. Prices may move between quote and
-              execution due to network conditions, slippage, or liquidity. All
-              swaps are final once confirmed on-chain.
+              Gift cards are digital vouchers sold and delivered by Bitrefill
+              and issued by each merchant. You pay in crypto from your wallet,
+              and Bitrefill&apos;s terms apply to the purchase. Which cards you
+              can buy, and where they work, depends on the merchant and your
+              country.
             </p>
             <p className="text-muted-foreground">
-              Tokenized stocks (xStocks) are digital assets issued by a
-              third-party issuer that track the price of underlying securities.
-              They are not shares, confer no shareholder rights, and are not
-              offered, endorsed, or guaranteed by the underlying companies.
-              Availability may be restricted in your jurisdiction.
+              Once a code is delivered, the purchase is final and can&apos;t be
+              refunded, except where the law says otherwise. Check the country,
+              currency and amount before you pay. Expiry, acceptance and usage
+              rules are set by the merchant, not by us; for problems with a
+              code, contact Bitrefill support first, and we&apos;ll help where
+              we can.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              11. Private Transfers
-            </h2>
-            <p className="text-muted-foreground">
-              Private, confidential transfers rely on Umbra&apos;s protocol.
-              Availability and behavior of these features depend on the
-              readiness of the underlying protocol, and additional or specific
-              terms may apply when a feature is activated.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">
-              12. Acceptable Use
+              11. Acceptable Use
             </h2>
             <p className="text-muted-foreground">You agree not to:</p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Violate any applicable law, regulation, or sanction.</li>
               <li>
-                Use Stealf to facilitate money laundering, terrorist financing,
-                fraud, sanctions evasion, or any illegal activity.
+                break any law or sanction, or use the Service for money
+                laundering, terrorist financing, fraud or sanctions evasion;
               </li>
               <li>
-                Reverse engineer, scrape, decompile, or attempt to extract data
-                from our systems.
+                use private features to hide the proceeds of crime or to get
+                around a provider&apos;s screening;
+              </li>
+              <li>get around geographic limits, including with a VPN;</li>
+              <li>
+                reverse engineer, scrape or decompile the app or our backend,
+                except where the law allows it;
               </li>
               <li>
-                Interfere with or disrupt the service (including
-                denial-of-service attempts, exploitation of rate limits, or
-                abuse of webhooks).
+                disrupt the Service, abuse rate limits or create automated or
+                fake accounts;
               </li>
-              <li>Create automated, fake, or unauthorized accounts.</li>
               <li>
-                Use the service in a way that could harm Stealf, other users, or
-                third parties.
+                use the Service in a way that harms Stealf, other users or
+                anyone else.
               </li>
             </ul>
             <p className="text-muted-foreground">
-              Violations may result in immediate suspension or termination and
-              may be reported to relevant authorities.
+              If you do, we may cut off your access to our interface and report
+              you where the law requires. We can&apos;t freeze or move funds in
+              your wallet.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              13. Third-Party Services
+              12. Third-Party Services
             </h2>
             <p className="text-muted-foreground">
-              Stealf integrates with third parties whose services are governed
-              by their own terms, including Turnkey (wallet infrastructure and
-              authentication), Dakota (cash-out and identity verification),
-              Bitrefill (gift cards), Reflect (yield), Umbra (private transfers),
-              Jupiter (swap routing), xStocks / Backed (tokenized stocks), and
-              Helius (Solana infrastructure). We may add, remove, or replace
-              third-party providers at any time. We are not liable for the acts,
-              omissions, outages, fees, policies, or data-handling practices of
-              any third-party provider or any on-chain protocol.
+              The Service connects to providers that run under their own terms:
+              Turnkey (keys and sign-in), Umbra and Arcium (private transfers),
+              Jupiter (swaps), Backed Assets (xStocks), Jito (liquid staking),
+              Bitrefill (gift cards) and Helius (Solana infrastructure). We may
+              add, swap or drop providers. We aren&apos;t responsible for their
+              outages, fees, policies, data handling or failures, or for any
+              on-chain protocol.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">14. Taxes</h2>
+            <h2 className="text-2xl font-medium tracking-tight">13. Taxes</h2>
             <p className="text-muted-foreground">
-              You are solely responsible for determining, reporting, and paying
-              any taxes applicable to your use of Stealf, including taxes on
-              yield, swaps, cash-outs, and any other transactions. Stealf does
-              not provide tax advice and does not file tax forms on your behalf.
+              You&apos;re responsible for working out, reporting and paying any
+              taxes on your activity, including swaps, staking rewards and
+              private transfers. We don&apos;t give tax advice or file anything
+              for you. Keep your own records; your viewing keys can help you
+              rebuild private transaction history for an accountant.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              14. Campaigns and Rewards
+            </h2>
+            <p className="text-muted-foreground">
+              We may run waitlist perks, referral programs, giveaways or similar
+              campaigns, each with its own rules shown when it starts. We decide
+              who&apos;s eligible, and we may change, pause or end a campaign,
+              or withhold a reward in cases of fraud, abuse or a breach of these
+              Terms. You may earn points for using the Service. Points have no
+              cash value, can&apos;t be sold or transferred, and aren&apos;t an
+              investment. Holding points doesn&apos;t promise you any token,
+              airdrop, allocation or price. If we ever run an airdrop, it will
+              come with its own terms and eligibility rules, and it may exclude
+              some countries, including the United States.
             </p>
           </section>
 
@@ -360,32 +526,15 @@ export default function TermsPage() {
               15. Disclaimers
             </h2>
             <p className="text-muted-foreground">
-              Stealf is provided &quot;as is&quot; and &quot;as available&quot;
-              without warranties of any kind, express or implied. We do not
-              warrant:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Continuous, uninterrupted, or error-free access.</li>
-              <li>
-                Profit, performance, or any specific outcome from any wallet,
-                yield, swap, or other activity.
-              </li>
-              <li>
-                The continued availability of any feature, integration, or
-                third-party partner.
-              </li>
-              <li>
-                The security, solvency, or performance of any third-party
-                protocol or service.
-              </li>
-              <li>
-                That the app is free of bugs, vulnerabilities, or unexpected
-                behavior.
-              </li>
-            </ul>
-            <p className="text-muted-foreground">
-              Some jurisdictions do not allow the disclaimer of implied
-              warranties; in those cases, some of the above may not apply to you.
+              The Service is provided &quot;as is&quot; and &quot;as
+              available&quot;, without warranties of any kind, express or
+              implied. In particular, we don&apos;t promise that the Service
+              will be uninterrupted or free of bugs and vulnerabilities, that
+              any feature, provider or protocol will stay available or stay
+              solvent, or that you&apos;ll earn anything or avoid losses. We
+              also don&apos;t promise that your activity will stay private (see
+              section 7). Some places don&apos;t allow these disclaimers, so
+              parts of this section may not apply to you.
             </p>
           </section>
 
@@ -394,71 +543,67 @@ export default function TermsPage() {
               16. Limitation of Liability
             </h2>
             <p className="text-muted-foreground">
-              To the maximum extent permitted by law, Stealf will not be liable
-              for:
+              To the fullest extent the law allows, Stealf isn&apos;t liable for
+              indirect, incidental, special, consequential or punitive damages,
+              or for lost assets, profits, rewards, data or opportunities. That
+              includes losses from market moves, depegs, exploits,
+              smart-contract bugs, relayer or protocol failures, lost keys, your
+              own mistakes, or anything a third-party provider does or fails to
+              do.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>
-                Indirect, incidental, special, consequential, or punitive
-                damages.
-              </li>
-              <li>
-                Loss of data, assets, profits, yield, or business opportunity.
-              </li>
-              <li>
-                Service outages, user errors, lost keys, or losses caused by
-                third-party providers or on-chain protocols.
-              </li>
-              <li>
-                Any financial loss arising out of or related to your use of
-                Stealf, including losses from market movements, depegs, exploits,
-                protocol failures, or smart-contract bugs.
-              </li>
-            </ul>
             <p className="text-muted-foreground">
-              To the extent permitted by law, our aggregate liability to you for
-              any claim arising out of or related to these Terms or the service
-              is capped at fifty US dollars (US$50).
+              Our total liability for any claim connected to these Terms or the
+              Service is capped at the greater of US$100 and the fees you paid
+              us in the 12 months before the claim. Since we charge no fees
+              today, that means US$100.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              17. Consumer Rights
+              17. Indemnity
             </h2>
             <p className="text-muted-foreground">
-              Nothing in these Terms excludes, restricts, or limits any right or
-              remedy you have under mandatory laws that apply to you as a
-              consumer and that cannot be waived by agreement — including
-              mandatory consumer-protection rights in the European Union and
-              your country of residence. Where such laws apply, the disclaimers,
-              liability cap, arbitration, and governing-law provisions below
-              apply only to the extent permitted by those laws.
+              Where the law allows, you&apos;ll cover Stealf&apos;s reasonable
+              costs, including legal fees, for third-party claims that come from
+              your breach of these Terms or your violation of a law or of
+              someone else&apos;s rights. This doesn&apos;t apply to claims
+              caused by our own fault, and it doesn&apos;t apply where consumer
+              law prohibits it.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              18. Governing Law and Dispute Resolution
+              18. Your Consumer Rights
             </h2>
             <p className="text-muted-foreground">
-              These Terms and any dispute arising from them or from your use of
-              Stealf are governed by the laws of the State of Delaware, without
-              regard to its conflict-of-laws rules, and by applicable US federal
-              law, except where mandatory local law applicable to you as a
-              consumer provides otherwise.
+              Nothing in these Terms takes away rights you have under consumer
+              protection laws that can&apos;t be waived by contract, including
+              those of the European Union and your country of residence. Where
+              those laws apply, sections 15, 16, 17 and 19 apply only as far as
+              those laws allow.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">
+              19. Governing Law and Disputes
+            </h2>
+            <p className="text-muted-foreground">
+              These Terms are governed by the laws of the State of Delaware and
+              applicable US federal law, without regard to conflict-of-laws
+              rules, unless mandatory consumer law where you live says
+              otherwise.
             </p>
             <p className="text-muted-foreground">
-              Where permitted by the law that applies to you, any dispute, claim,
-              or controversy shall be resolved by binding individual arbitration
-              administered in Wilmington, Delaware, under the then-current rules
-              of the American Arbitration Association, and you waive class-action
-              and jury-trial rights. This does not apply where such waiver is
-              prohibited by mandatory law applicable to you.
-            </p>
-            <p className="text-muted-foreground">
-              You have 30 days from accepting these Terms to opt out of
-              arbitration by writing to{" "}
+              Where your local law permits it, disputes will go to binding
+              individual arbitration in Wilmington, Delaware, under the American
+              Arbitration Association&apos;s rules then in force, and you give
+              up class actions and jury trials. If you live in the EU or the UK,
+              this paragraph doesn&apos;t apply to you, and you can bring a
+              claim in the courts of your country of residence. You can opt out
+              of arbitration within 30 days of accepting these Terms by emailing{" "}
               <a
                 href="mailto:louis@stealf.xyz"
                 className="text-foreground hover:underline"
@@ -471,41 +616,89 @@ export default function TermsPage() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              19. Termination
+              20. App Store and Google Play
             </h2>
             <p className="text-muted-foreground">
-              We may suspend, restrict, or terminate your access at our
-              discretion, including for breach of these Terms or for compliance,
-              fraud, security, or risk reasons. You may stop using the service at
-              any time. The sections on self-custody, disclaimers, limitation of
-              liability, taxes, consumer rights, and governing law survive
-              termination.
+              If you got the app from Apple&apos;s App Store, these Terms are
+              between you and Stealf only, not Apple. Apple isn&apos;t
+              responsible for the app, its content, support or maintenance, or
+              for any claim about it, including product liability, legal
+              compliance, consumer protection or intellectual property claims.
+              If the app fails to meet a warranty that applies by law, you can
+              notify Apple, which may refund the app&apos;s price (zero, since
+              it&apos;s free); Apple has no other warranty duty. Your use must
+              also follow the App Store&apos;s Usage Rules. Apple and its
+              subsidiaries are third-party beneficiaries of these Terms and can
+              enforce them against you. Similar terms apply to Google if you got
+              the app from Google Play.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">20. Changes</h2>
+            <h2 className="text-2xl font-medium tracking-tight">
+              21. Suspension and Termination
+            </h2>
             <p className="text-muted-foreground">
-              We may modify these Terms at any time. We will post the new version
-              and update the &quot;Last Updated&quot; date. For material changes,
-              we will notify you in-app or by email. Continued use of Stealf
-              after changes take effect means you accept the updated Terms.
+              We may suspend or end your access to our interface at any time,
+              including for a breach of these Terms or for legal, security or
+              fraud reasons. You may stop using the Service whenever you want.
+              Either way, your funds stay in your wallet, and you can reach them
+              with your keys through any compatible wallet software. Sections 6,
+              13, 15 to 19 and 23 survive termination.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-medium tracking-tight">21. Contact</h2>
+            <h2 className="text-2xl font-medium tracking-tight">
+              22. Changes to These Terms
+            </h2>
+            <p className="text-muted-foreground">
+              We may update these Terms. We&apos;ll post the new version with a
+              new &quot;Last Updated&quot; date, and for material changes
+              we&apos;ll tell you in the app at least 15 days before they take
+              effect. If you keep using the Service after that, you accept the
+              new Terms; if you don&apos;t agree, stop using it.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">23. General</h2>
+            <p className="text-muted-foreground">
+              If a court finds part of these Terms unenforceable, the rest stays
+              in force. If we don&apos;t enforce a right right away, we
+              haven&apos;t given it up. You can&apos;t transfer these Terms
+              without our consent; we may transfer them as part of a merger,
+              acquisition or sale of assets. We aren&apos;t liable for delays or
+              failures caused by events outside our reasonable control, such as
+              network outages, protocol failures or government action. These
+              Terms and the Privacy Policy are the whole agreement between you
+              and us about the Service. If we translate them, the English
+              version controls.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-medium tracking-tight">24. Contact</h2>
             <address className="not-italic text-muted-foreground space-y-1">
               <div className="text-foreground">Stealf Corporation</div>
               <div>1111b South Governors Avenue, STE 40928</div>
               <div>Dover, DE 19904, United States</div>
               <div>
-                Email:{" "}
+                Legal questions and arbitration opt-out:{" "}
                 <a
                   href="mailto:louis@stealf.xyz"
                   className="text-foreground hover:underline"
                 >
                   louis@stealf.xyz
+                </a>
+              </div>
+              <div>
+                Security reports:{" "}
+                <a
+                  href="mailto:thomas@stealf.xyz"
+                  className="text-foreground hover:underline"
+                >
+                  thomas@stealf.xyz
                 </a>
               </div>
             </address>
