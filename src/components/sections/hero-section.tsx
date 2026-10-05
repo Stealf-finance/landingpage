@@ -1,4 +1,4 @@
-import { siteConfig, TESTFLIGHT_URL } from "@/lib/config";
+import { GOOGLE_PLAY_URL, siteConfig, TESTFLIGHT_URL } from "@/lib/config";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,20 +32,36 @@ export function HeroSection() {
               {hero.description}
             </p>
           </div>
-          <Link
-            href={TESTFLIGHT_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="block transition-all ease-out hover:opacity-85 active:scale-95"
-          >
-            <Image
-              src="/store-badges/testflight-badge.png"
-              alt="Get the beta on TestFlight"
-              width={360}
-              height={120}
-              className="h-11 md:h-12 w-auto"
-            />
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={TESTFLIGHT_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="block transition-all ease-out hover:opacity-85 active:scale-95"
+            >
+              <Image
+                src="/store-badges/testflight-badge.png"
+                alt="Get the beta on TestFlight"
+                width={360}
+                height={120}
+                className="h-11 md:h-12 w-auto"
+              />
+            </Link>
+            <Link
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="block transition-all ease-out hover:opacity-85 active:scale-95"
+            >
+              <Image
+                src="/store-badges/google-play-badge.svg"
+                alt="Get it on Google Play"
+                width={180}
+                height={53}
+                className="h-11 md:h-12 w-auto"
+              />
+            </Link>
+          </div>
         </div>
         <div className="relative z-10 w-full max-w-5xl mx-auto mt-16 md:mt-20 px-6">
           <Image
