@@ -26,7 +26,7 @@ export default function TermsPage() {
               Terms of Use
             </h1>
             <p className="text-sm text-muted-foreground">
-              Last Updated: October 1, 2026
+              Last Updated: October 24, 2026
             </p>
           </header>
 
@@ -171,11 +171,6 @@ export default function TermsPage() {
                       "Jupiter and the liquidity sources it routes to",
                       "8",
                     ],
-                    [
-                      "Tokenized stocks (xStocks)",
-                      "Backed Assets, accessed through Jupiter swaps",
-                      "8",
-                    ],
                     ["Liquid staking (JitoSOL)", "Jito stake pool", "9"],
                     ["Gift cards", "Bitrefill and the issuing merchants", "10"],
                   ].map(([feature, provider, section]) => (
@@ -203,8 +198,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-medium tracking-tight">5. Fees</h2>
             <p className="text-muted-foreground">
               Stealf charges no fees and takes no commission. We don&apos;t add
-              a margin to swaps, staking, private transfers, xStocks or gift
-              cards, we don&apos;t take a referral cut from the providers we
+              a margin to swaps, staking, private transfers or gift cards, we don&apos;t take a referral cut from the providers we
               route to, and there&apos;s no subscription.
             </p>
             <p className="text-muted-foreground">
@@ -351,7 +345,7 @@ export default function TermsPage() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-medium tracking-tight">
-              8. Swaps and Tokenized Stocks
+              8. Swaps
             </h2>
             <p className="text-muted-foreground">
               Swaps go through Jupiter, which picks a route across decentralized
@@ -359,24 +353,6 @@ export default function TermsPage() {
               can&apos;t guarantee execution. The price can move between the
               quote and the moment your transaction lands, because of slippage,
               liquidity or network load. A confirmed swap is final.
-            </p>
-            <p className="text-muted-foreground">
-              xStocks are tokens issued by Backed Assets that track the price of
-              listed shares. In the app you get them through a Jupiter swap,
-              like any other token. They aren&apos;t shares: you get no voting
-              rights, no dividends paid as a shareholder and no claim on the
-              underlying company, which hasn&apos;t issued, endorsed or approved
-              them. Their price can drift from the share price, liquidity can be
-              thin, and you carry the issuer&apos;s and its custodian&apos;s
-              risk. Backed&apos;s own legal documents apply when you hold them.
-            </p>
-            <p className="text-muted-foreground">
-              xStocks aren&apos;t available to US persons or to anyone in the
-              United States, and they&apos;re also restricted in Canada, the
-              United Kingdom and Australia, among other places the issuer may
-              add. By swapping into xStocks you confirm you&apos;re not in, or a
-              resident of, any of these places. We may hide or block xStocks
-              based on your location signals.
             </p>
           </section>
 
@@ -484,7 +460,7 @@ export default function TermsPage() {
             <p className="text-muted-foreground">
               The Service connects to providers that run under their own terms:
               Turnkey (keys and sign-in), Umbra and Arcium (private transfers),
-              Jupiter (swaps), Backed Assets (xStocks), Jito (liquid staking),
+              Jupiter (swaps), Jito (liquid staking),
               Bitrefill (gift cards) and Helius (Solana infrastructure). We may
               add, swap or drop providers. We aren&apos;t responsible for their
               outages, fees, policies, data handling or failures, or for any

@@ -62,7 +62,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Last Updated: October 1, 2026
+              Last Updated: October 24, 2026
             </p>
           </header>
 
@@ -304,18 +304,13 @@ export default function PrivacyPage() {
                 ],
                 [
                   "Jupiter",
-                  "Swaps and xStocks",
+                  "Swaps",
                   "Wallet address and swap details",
                 ],
                 [
                   "Jito",
                   "Liquid staking",
                   "Wallet address and staking transactions",
-                ],
-                [
-                  "Backed Assets",
-                  "xStocks issuer",
-                  "On-chain transactions involving xStocks",
                 ],
                 [
                   "Bitrefill",
